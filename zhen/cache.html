@@ -7,6 +7,7 @@
 <body>
 <script>
 var state = true;
+var app = 'http://doubi.io/zhen/app.html';
 //开始检查
 applicationCache.addEventListener('checking', function(e){
     console.log(['checking', e]);
@@ -15,28 +16,28 @@ applicationCache.addEventListener('checking', function(e){
 // 无更新
 applicationCache.addEventListener('noupdate', function(e){
     alert('无更新！');
-    parent.location.replace('app.html');
+    parent.location.replace(app);
     state = false;
 });
 
 // 更新完成
 applicationCache.addEventListener('cached', function(e){
     alert('缓存成功！');
-    parent.location.replace('app.html');
+    parent.location.replace(app);
     state = false;
 });
 
 // 更新完成
 applicationCache.addEventListener('updateready', function(e){
     alert('更新完成！');
-    parent.location.replace('app.html');
+    parent.location.replace(app);
     state = false;
 });
 
 // 废弃缓存
 applicationCache.addEventListener('obsolete', function(e){
     alert('离线缓存功能已删除！');
-    parent.location.replace('app.html');
+    parent.location.replace(app);
     state = false;
 });
 </script>
