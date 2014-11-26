@@ -6,7 +6,39 @@
 </head>
 <body>
 <script>
-    
+var state = true;
+//开始检查
+applicationCache.addListener('checking', function(e){
+    console.log(['checking', e]);
+});
+
+// 无更新
+applicationCache.addListener('noupdate', function(e){
+    alert('无更新！');
+    parent.localhost.replace('app.html');
+    state = false;
+});
+
+// 更新完成
+applicationCache.addListener('cached', function(e){
+    alert('缓存成功！');
+    parent.localhost.replace('app.html');
+    state = false;
+});
+
+// 更新完成
+applicationCache.addListener('updateready', function(e){
+    alert('更新完成！');
+    parent.localhost.replace('app.html');
+    state = false;
+});
+
+// 废弃缓存
+applicationCache.addListener('obsolete', function(e){
+    alert('离线缓存功能已删除！');
+    parent.localhost.replace('app.html');
+    state = false;
+});
 </script>
 </body>
 </html>
