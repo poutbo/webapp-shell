@@ -15,28 +15,28 @@ applicationCache.addEventListener('checking', function(e){
 // 无更新
 applicationCache.addEventListener('noupdate', function(e){
     alert('无更新！');
-    parent.localhost.replace('app.html');
+    parent.location.replace('app.html');
     state = false;
 });
 
 // 更新完成
 applicationCache.addEventListener('cached', function(e){
     alert('缓存成功！');
-    parent.localhost.replace('app.html');
+    parent.location.replace('app.html');
     state = false;
 });
 
 // 更新完成
 applicationCache.addEventListener('updateready', function(e){
     alert('更新完成！');
-    parent.localhost.replace('app.html');
+    parent.location.replace('app.html');
     state = false;
 });
 
 // 废弃缓存
 applicationCache.addEventListener('obsolete', function(e){
     alert('离线缓存功能已删除！');
-    parent.localhost.replace('app.html');
+    parent.location.replace('app.html');
     state = false;
 });
 </script>
