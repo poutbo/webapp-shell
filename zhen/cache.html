@@ -15,28 +15,28 @@ applicationCache.addEventListener('checking', function(e){
 
 // 无更新
 applicationCache.addEventListener('noupdate', function(e){
-    parent.postMessage('无更新！');
+    parent.postMessage('无更新！', '*');
     parent.location.replace(app);
     state = false;
 });
 
 // 更新完成
 applicationCache.addEventListener('cached', function(e){
-    parent.postMessage('缓存成功！');
+    parent.postMessage('缓存成功！', '*');
     parent.location.replace(app);
     state = false;
 });
 
 // 更新完成
 applicationCache.addEventListener('updateready', function(e){
-    parent.postMessage('更新完成！');
+    parent.postMessage('更新完成！', '*');
     parent.location.replace(app);
     state = false;
 });
 
 // 废弃缓存
 applicationCache.addEventListener('obsolete', function(e){
-    parent.postMessage('离线缓存功能已删除！');
+    parent.postMessage('离线缓存功能已删除！', '*');
     parent.location.replace(app);
     state = false;
 });
