@@ -12,6 +12,16 @@ applicationCache.addEventListener('checking', function(e){
     console.log(['checking', e]);
 });
 
+applicationCache.addEventListener('progress', function(e){
+    console.log(['progress', e]);
+});
+
+applicationCache.addEventListener('error', function(e){
+    console.log(['error', e]);
+    document.getElementById('debugInfo').innerHTML = '出错了！';
+    parent.postMessage('出错了！', '*');
+});
+
 // 缓存完成
 applicationCache.addEventListener('cached', function(e){
     document.getElementById('debugInfo').innerHTML = '缓存成功！';
@@ -35,6 +45,8 @@ applicationCache.addEventListener('obsolete', function(e){
     document.getElementById('debugInfo').innerHTML = '离线缓存功能已删除！';
     parent.postMessage('离线缓存功能已删除！', '*');
 });
+
+
 </script>
 </body>
 </html>

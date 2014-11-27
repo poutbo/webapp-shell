@@ -4,10 +4,12 @@ CACHE MANIFEST
 
 CACHE:
 app.html
+cache.html
+offline.html
 css/style.css
 
 NETWORK:
-
+*
 
 FALLBACK:
-app.html 404.html
+/ /offline.html
