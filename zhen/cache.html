@@ -13,6 +13,8 @@ applicationCache.addEventListener('checking', function(e){
 });
 
 applicationCache.addEventListener('progress', function(e){
+    var loading = Math.round(e.total/e.loaded*100);
+    parent.postMessage('loading:' + loading, '*');
     console.log(['progress', e]);
 });
 
