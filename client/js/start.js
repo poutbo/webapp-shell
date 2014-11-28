@@ -9,7 +9,7 @@ window.addEventListener('message', function(e){
     document.getElementById('bar').style.width = progress;
     document.getElementById('status').innerHTML = progress;
 
-    if(progress == '100%'){
+    if(json.status in ['complete', 'error']){
         top.location.replace(domain + '/web/app.html');
     }
 });
