@@ -17,7 +17,7 @@ function complete(e){
 applicationCache.addEventListener('checking', function(e){
     var json = {
         progress: 0,
-        status: 'loading'
+        status: 'checking'
     };
     parent.postMessage(JSON.stringify(json), '*');
 });
@@ -25,7 +25,7 @@ applicationCache.addEventListener('checking', function(e){
 applicationCache.addEventListener('progress', function(e){
     var json = {
         progress: Math.round(e.loaded/e.total*100),
-        status: 'loading'
+        status: 'progress'
     };
     parent.postMessage(JSON.stringify(json), '*');
 });
