@@ -10,7 +10,7 @@ window.addEventListener('message', function(e){
     document.getElementById('status').innerHTML = progress;
 
     if(progress == '100%'){
-        top.location.replace(domain + 'web/app.html');
+        top.location.replace(domain + '/web/app.html');
     }
 });
 
