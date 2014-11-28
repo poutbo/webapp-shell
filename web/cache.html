@@ -17,7 +17,7 @@ function complete(e){
 applicationCache.addEventListener('checking', function(e){
     var json = {
         progress: 0,
-        status: 'error'
+        status: 'loading'
     };
     parent.postMessage(JSON.stringify(json), '*');
 });

@@ -8,7 +8,7 @@ window.addEventListener('message', function(e){
     var progress = json.progress + '%';
     document.getElementById('bar').style.width = progress;
     document.getElementById('status').innerHTML = progress;
-
+    console.log(json.status)
     if(json.status in ['complete', 'error']){
         top.location.replace(domain + '/web/app.html');
     }
