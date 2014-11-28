@@ -4,12 +4,13 @@ window.addEventListener('message', function(e){
     if(e.origin !== domain) {
         return;
     }
+    var status = {complete:1, error:1};
     var json = JSON.parse(e.data);
     var progress = json.progress + '%';
     document.getElementById('bar').style.width = progress;
     document.getElementById('status').innerHTML = progress;
-    console.log(json.status)
-    if(json.status in ['complete', 'error']){
+    
+    if(status[json.status]){
         top.location.replace(domain + '/web/app.html');
     }
 });
