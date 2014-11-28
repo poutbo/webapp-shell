@@ -1,139 +1,30 @@
 body {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
 }
-@font-face {
-  font-family: 'fontello';
-  src: url('../font/fontello.eot?72381077');
-  src: url('../font/fontello.eot?72381077#iefix') format('embedded-opentype'), url('../font/fontello.woff?72381077') format('woff'), url('../font/fontello.ttf?72381077') format('truetype'), url('../font/fontello.svg?72381077#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal
+#loading {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    margin: 0 auto;
+    width: 300px;
+    height: 64px;
+    text-align: center;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1em;
-  margin-left: .2em
+#progressbar {
+    height: 3px;
+    margin: 16px;
+    background: #ddd;
 }
-.icon-spin6:before {
-  content: '\e800'
-}
-.icon-emo-unhappy:before {
-  content: '\e801'
-}
-.icon-emo-happy:before {
-  content: '\e802'
-}
-.icon-emo-wink:before {
-  content: '\e803'
-}
-.icon-emo-wink2:before {
-  content: '\e804'
-}
-.icon-emo-sleep:before {
-  content: '\e805'
-}
-.icon-emo-thumbsup:before {
-  content: '\e806'
-}
-.icon-emo-grin:before {
-  content: '\e807'
-}
-.icon-spin3:before {
-  content: '\e808'
-}
-.icon-spin4:before {
-  content: '\e809'
-}
-.icon-spin5:before {
-  content: '\e80a'
-}
-.icon-warning:before {
-  content: '\e80c'
-}
-.animate-spin {
-  -moz-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
-  -webkit-animation: spin 2s infinite linear;
-  animation: spin 2s infinite linear;
-  display: inline-block
-}
-@-moz-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg)
-  }
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg)
-  }
-}
-@-webkit-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg)
-  }
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg)
-  }
-}
-@-o-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg)
-  }
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg)
-  }
-}
-@-ms-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg)
-  }
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg)
-  }
-}
-@keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg)
-  }
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg)
-  }
+#bar {
+    width: 0%;
+    height: 3px;
+    background: #333;
+    transition: width .5s;
+    -o-transition: width .5s;
+    -ms-transition: width .5s;
+    -moz-transition: width .5s;
+    -webkit-transition: width .5s;
 }

@@ -2,53 +2,50 @@
 <html lang="en" manifest="app.manifest">
 <head>
 <meta charset="UTF-8">
-<title>Cache</title>
+<title>check-cache</title>
 </head>
 <body>
-<div id="debugInfo"></div>
 <script>
+function complete(e){
+    var json = {
+        progress: 100,
+        status: 'complete'
+    };
+    parent.postMessage(JSON.stringify(json), '*');
+}
 //开始检查
 applicationCache.addEventListener('checking', function(e){
-    console.log(['checking', e]);
+    var json = {
+        progress: 1,
+        status: 'error'
+    };
+    parent.postMessage(JSON.stringify(json), '*');
 });
 
 applicationCache.addEventListener('progress', function(e){
-    var loading = Math.round(e.loaded/e.total*100);
-    parent.postMessage('loading:' + loading, '*');
-    console.log(['progress', e]);
+    var json = {
+        progress: Math.round(e.loaded/e.total*100),
+        status: 'loading'
+    };
+    parent.postMessage(JSON.stringify(json), '*');
 });
 
 applicationCache.addEventListener('error', function(e){
-    console.log(['error', e]);
-    document.getElementById('debugInfo').innerHTML = '出错了！';
-    parent.postMessage('出错了！', '*');
+    var json = {
+        progress: 100,
+        status: 'error'
+    };
+    parent.postMessage(JSON.stringify(json), '*');
 });
 
 // 缓存完成
-applicationCache.addEventListener('cached', function(e){
-    document.getElementById('debugInfo').innerHTML = '缓存成功！';
-    parent.postMessage('缓存成功！', '*');
-});
-
-// 无更新
-applicationCache.addEventListener('noupdate', function(e){
-    document.getElementById('debugInfo').innerHTML = '无更新！';
-    parent.postMessage('无更新！', '*');
-});
-
+applicationCache.addEventListener('cached', complete);
 // 更新完成
-applicationCache.addEventListener('updateready', function(e){
-    document.getElementById('debugInfo').innerHTML = '更新完成！';
-    parent.postMessage('更新完成！', '*');
-});
-
+applicationCache.addEventListener('updateready', complete);
+// 无更新
+applicationCache.addEventListener('noupdate', complete);
 // 废弃缓存
-applicationCache.addEventListener('obsolete', function(e){
-    document.getElementById('debugInfo').innerHTML = '离线缓存功能已删除！';
-    parent.postMessage('离线缓存功能已删除！', '*');
-});
-
-
+applicationCache.addEventListener('obsolete', complete);
 </script>
 </body>
 </html>
