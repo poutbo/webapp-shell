@@ -4,8 +4,20 @@ CACHE MANIFEST
 
 CACHE:
 app.html
+z3/css/font.css
+z3/css/anim.css
+z3/css/style.css
+z3/res/js/hammer.min.js
+z3/res/js/iscroll.min.js
+z3/js/app.js
+nirvana/nirvana.js
 cache.html
 offline.html
+z3/res/fonts/icomoon.woff
+z3/res/fonts/icomoon.eot
+z3/res/fonts/icomoon.ttf
+z3/res/fonts/icomoon.svg
+z3/res/images/placeholder.gif
 
 NETWORK:
 *
